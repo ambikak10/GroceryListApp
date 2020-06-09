@@ -5,26 +5,26 @@
   <div class="row">
       <div class="col-xs-6 col-md-4 col-centered">
           <div class="input-group">
-              <input type="text" class="form-control" placeholder="enter grocery items" [(ngModel)]="task" />
+              <input type="text" class="form-control" placeholder="enter grocery items" [(ngModel)]="task.name" />
               <div class="input-group-btn">
                   <button class="btn btn-primary" type="button" (click)="onClick()">
       <span class="glyphicon glyphicon-ok"></span>
       </button>
               </div>
           </div>
-      </div>
-    </div>
+     
 
   <br />
 
 
-<div class="col-xs-6 col-md-4 col-centered">
   <ul class="list-group">
     <li *ngFor="let task of tasks" class="list-group-item" id="margin-bottom">
-    
-      <span> {{ task.name }} </span>
-        
+      <span (click)="onStrike(task)" type="button"[ngClass]="{'strike': task.strike}"> {{ task.name }} </span>
+        <span (click)="onDelete(task)" type="button"class="glyphicon glyphicon-remove float-right"></span>
+        <span type="button"(click)="onEdit(task)" class="glyphicon glyphicon-pencil float-right"> &nbsp;</span>
    </ul>
-</div>
 
+
+</div>
+</div>
 </div>
