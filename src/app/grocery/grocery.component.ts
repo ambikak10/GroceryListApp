@@ -18,15 +18,18 @@ export class GroceryComponent implements OnInit {
   }
   onClick(){
     if (this.task.id == 0) {
-      this.tasks.push({ id: (new Date()).getTime(), name: this.task.name });
-      this.task = {
-        name: '',
-        id: 0
-      };
+   this.tasks.push({ id: (new Date()).getTime(), name: this.task.name });
     }
+    this.task = {
+    name: '',
+    id: 0
+    } 
   }
+    
+  
   onEdit(item){
    this.task = item;
+
   }
   onDelete(item) {
    for(var i=0; i< this.tasks.length; i++){
