@@ -14,3 +14,6 @@ margin: 0 auto;
 .strike{
     text-decoration:line-through;
 }
+.list-group-item {
+ word-break: break-all;
+}
